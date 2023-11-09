@@ -15,18 +15,18 @@ AppState.prototype.instantiateProducts = function () {
 }
 
 AppState.prototype.saveToLocalStorage = function () {
-  // Convert the array of products to a JSON string and store it in local storage
+
   localStorage.setItem('productsData', JSON.stringify(this.allProducts));
 }
 
 AppState.prototype.loadItems = function () {
-  // Retrieve data from local storage and parse it back to an array of product objects
+
   const productsDataString = localStorage.getItem('productsData');
-  
+
   if (productsDataString) {
     this.allProducts = JSON.parse(productsDataString);
   } else {
-    // If no data is found in local storage, instantiate products
+
     this.instantiateProducts();
   }
 }

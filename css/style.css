@@ -1,11 +1,12 @@
 header h1 {
-  padding-top: 20px;
-  font-family: "Comic Sans MS", cursive;
-  font-size: 36px;
-  color: #ff6f61;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  animation: bounce 2s infinite;
+
+    padding-top: 20px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 36px;
+    color: blue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
@@ -19,51 +20,54 @@ header h1 {
   }
 }
 
-#productsContainer {
-  display: grid;
-  grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 1.3fr;
-  grid-template-rows: 0.3fr 1.7fr 1fr;
-  grid-template-areas:
-    "header header header header header"
-    ". img1 img2 img3 ."
-    ". . btn . .";
+
+.productsContainer {
+    display: grid;
+    grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 1.3fr;
+    grid-template-rows: 0.3fr 1.7fr 1fr;
+    grid-template-areas:
+        "header header header header header"
+        ". img1 img2 img3 ."
+        ". . btn . .";
+    
+        gap: 20px;
 }
 
-#productsContainer img:first-child {
-  grid-area: img1;
+.productsContainer img:first-child {
+    grid-area: img1;
 }
 
-#productsContainer img:nth-child(2) {
-  grid-area: img2;
+.productsContainer img:nth-child(2) {
+    grid-area: img2;
 }
 
-#productsContainer img:nth-child(3) {
-  grid-area: img3;
+.productsContainer img:nth-child(3) {
+    grid-area: img3;
 }
-#productsContainer img {
-  box-shadow: 5px 5px 10px 2px #000;
+.productsContainer img{
+    box-shadow: 5px 5px 10px 2px #000;
+    height: 300px;
+    width: 300px;
 }
-
-#chart-section {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 80px;
-  padding: 50px;
-  width: 100%;
-  height: 50vh;
+nav {
+    display: flex;
+    background-color: #3498db; 
+    padding: 10px;
+    gap: 20px;
 }
 
-#chart {
-  width: 80% !important;
-  height: 600px !important;
-}
+.nav-item {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;}
 
-footer {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-  font-size: xx-large;
-  width: 100%;
-}
+    .nav-item:hover {
+        transform: scale(1.1); 
+    }
+    i {
+        margin-bottom: 5px;
+    }
+

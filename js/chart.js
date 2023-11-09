@@ -3,13 +3,13 @@
 let canvasElem = document.getElementById('chart');
 
 function renderChart() {
-  // Instantiate a new AppState
+ 
   const appState = new AppState();
 
-  // Use a method on AppState to load vote data from localStorage
+  
   appState.loadItems();
 
-  // Create a data object for chart.js using AppState's allProducts array
+ 
   const productNames = appState.allProducts.map(product => product.name);
   const voteTotals = appState.allProducts.map(product => product.timesClicked);
 
@@ -27,7 +27,7 @@ function renderChart() {
     ],
   };
 
-  // Combine the data object with configuration information for chart.js
+  
   const config = {
     type: 'bar',
     data: data,
@@ -41,9 +41,7 @@ function renderChart() {
     },
   };
 
-  console.log(data);
 
-  // Call chart.js with the configuration and the canvasElem
   new Chart(canvasElem, config);
 }
 
