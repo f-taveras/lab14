@@ -19,9 +19,10 @@ function renderChart() {
       {
         label: 'Votes',
         data: voteTotals,
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        backgroundColor: 'rgba(12, 23, 232)',
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1,
+
       },
     ],
   };
@@ -31,7 +32,7 @@ function renderChart() {
     type: 'bar',
     data: data,
     options: {
-      responsive: false,
+      responsive: true,
       scales: {
         y: {
           beginAtZero: true,
@@ -39,6 +40,8 @@ function renderChart() {
       },
     },
   };
+
+  console.log(data);
 
   // Call chart.js with the configuration and the canvasElem
   new Chart(canvasElem, config);
