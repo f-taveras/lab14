@@ -1,11 +1,8 @@
-'use strict';
-
 function AppState() {
   this.allProducts = [];
 }
 
 AppState.prototype.instantiateProducts = function () {
-
   const productNames = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'tauntaun', 'unicorn', 'water-can', 'wine-glass'];
 
   for (let i = 0; i < productNames.length; i++) {
@@ -15,21 +12,24 @@ AppState.prototype.instantiateProducts = function () {
       this.allProducts.push(new Product(productNames[i]))
     }
   }
-
 }
 
 AppState.prototype.saveToLocalStorage = function () {
-  // TODO: Fill in this instance method to save product data to local storage
+  // Convert the array of products to a JSON string and store it in local storage
+  localStorage.setItem('productsData', JSON.stringify(this.allProducts));
 }
 
 AppState.prototype.loadItems = function () {
-
-  // TODO: Update this instance method to retrieve data from local storage instead of creating new Products on each page load
-
-  this.instantiateProducts();
-
+  // Retrieve data from local storage and parse it back to an array of product objects
+  const productsDataString = localStorage.getItem('productsData');
+  
+  if (productsDataString) {
+    this.allProducts = JSON.parse(productsDataString);
+  } else {
+    // If no data is found in local storage, instantiate products
+    this.instantiateProducts();
+  }
 }
-
 
 function Product(name, fileExtension = 'jpg') {
   this.name = name;
