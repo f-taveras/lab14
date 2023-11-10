@@ -1,12 +1,15 @@
 header h1 {
 
+
     padding-top: 20px;
+
     font-family: 'Comic Sans MS', cursive;
     font-size: 36px;
     color: blue;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
     animation: bounce 2s infinite;
+    
 }
 
 @keyframes bounce {
@@ -21,7 +24,9 @@ header h1 {
 }
 
 
-.productsContainer {
+
+main section {
+
     display: grid;
     grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr 1.3fr;
     grid-template-rows: 0.3fr 1.7fr 1fr;
@@ -33,18 +38,18 @@ header h1 {
         gap: 20px;
 }
 
-.productsContainer img:first-child {
+main section img:first-child {
     grid-area: img1;
 }
 
-.productsContainer img:nth-child(2) {
+main section img:nth-child(2) {
     grid-area: img2;
 }
 
-.productsContainer img:nth-child(3) {
+main section img:nth-child(3) {
     grid-area: img3;
 }
-.productsContainer img{
+main section img{
     box-shadow: 5px 5px 10px 2px #000;
     height: 300px;
     width: 300px;
@@ -52,7 +57,7 @@ header h1 {
 nav {
     display: flex;
     background-color: #3498db; 
-    padding: 10px;
+    padding: 30px;
     gap: 20px;
 }
 
@@ -70,4 +75,3 @@ nav {
     i {
         margin-bottom: 5px;
     }
-
